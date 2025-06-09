@@ -158,6 +158,13 @@ spark.conf.set("fs.azure.account.oauth2.client.endpoint.<storage-account>.dfs.co
 
 <img width="373" alt="image" src="https://github.com/user-attachments/assets/4f6b31ce-0caa-463a-8615-3dfda5bfd54d" />
 
+<p>Go ahead and verify the creation of scope by running</p>
+```python
+display(dbutils.secrets.listScopes())
+```
+
+<img width="287" alt="image" src="https://github.com/user-attachments/assets/f6b714f8-c20b-442b-bfcb-e0dd9fb924df" />
+
 
 
 
