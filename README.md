@@ -122,3 +122,43 @@ spark.conf.set("fs.azure.account.oauth2.client.endpoint.<storage-account>.dfs.co
 ## Secret Scope
 
 <p>When accessing external data sources rather than entering credentials directly into notebooks, you can securely store credentials using Databricks secrets and reference them in your notebooks and jobs. This approach enhances security and simplifies credential management. This page provides an overview of Databricks secrets.</p>
+
+### Create an Azure Key Vault-backed secret scope
+
+<p>Go to&nbsp;<code>https://&lt;databricks-instance&gt;#secrets/createScope</code>. Replace&nbsp;<code>&lt;databricks-instance&gt;</code>&nbsp;with the&nbsp;<a href="https://learn.microsoft.com/en-us/azure/databricks/workspace/workspace-details#workspace-url" data-linktype="relative-path">workspace URL</a>&nbsp;of your Azure Databricks deployment. This URL is case sensitive. For example,&nbsp;<code>scope</code>&nbsp;in&nbsp;<code>createScope</code>&nbsp;must use an uppercase&nbsp;<code>S</code>)</p>
+
+<p>Copy and paste that URL in any web browser</p>
+
+![image](https://github.com/user-attachments/assets/f7a6f27c-c6b2-44df-8abc-595aa5349127)
+
+<p>Go to your Databricks Workspace and indetify your databricks-instance as shown in the fig below</p>
+
+![image](https://github.com/user-attachments/assets/f466c84a-b0a9-4648-8cce-d4e85b431e48)
+
+<p>You will then place databricks-instance in its place holder and hit enter. A new page will open that would look like the fig as shown below</p>
+
+<img width="665" alt="image" src="https://github.com/user-attachments/assets/dda50951-3f5c-44ac-af82-903e54baa498" />
+
+
+<p><strong>Scope Name</strong> : A name, unique within a workspace that identifies a secret scope. Scope names are readable by all users. A workspace is limited to a maximum of 100 scopes.</p>
+<p><strong>Manage Principal</strong> : Defines the manage principal of the secret scope. [All workspace users] (All users in the workspace) or [Creator] (Only the creator of this secret scope). The [Creator] option works only in a Premium Tier.</p>
+<p><strong>Azure Key Vault</strong> : An existing Azure Key Vault.</p>
+
+<p>This will tell Databricks what Key Vault you are talking about</p>
+<p>Key Vault -&gt; Properties</p>
+<p>DNS Name = Go to Key Vault -&gt; Settings -&gt; Properties -&gt; Vault URI</p>
+
+![image](https://github.com/user-attachments/assets/364dd148-81fc-4513-921b-cfbea1175afe)
+
+![image](https://github.com/user-attachments/assets/09ae7ff2-24b0-4376-b363-5d0c9bc6cccb)
+
+<p>Replace DNS Name with Vault URI and also provide Resource ID of your Azure Key Vault instance&nbsp;</p>
+
+<img width="432" alt="image" src="https://github.com/user-attachments/assets/38e79e7d-1aec-4c98-9eac-6d291ebbf299" />
+
+<img width="373" alt="image" src="https://github.com/user-attachments/assets/4f6b31ce-0caa-463a-8615-3dfda5bfd54d" />
+
+
+
+
+
