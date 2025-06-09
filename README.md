@@ -118,3 +118,7 @@ spark.conf.set("fs.azure.account.oauth2.client.endpoint.<storage-account>.dfs.co
 
 ![image](https://github.com/user-attachments/assets/3e831479-58b3-4022-ad5e-c4a600ce4a4c)
 
+
+## Secret Scope
+
+<p>When accessing external data sources rather than entering credentials directly into notebooks, you can securely store credentials using Databricks secrets and reference them in your notebooks and jobs. This approach enhances security and simplifies credential management. This page provides an overview of Databricks secrets.</p>
